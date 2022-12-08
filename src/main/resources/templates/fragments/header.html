@@ -13,7 +13,7 @@
         </button>
 
         <div th:style="${'display:flex; flex-direction:row;'}">
-            <img class="d-block" src="https://i.ibb.co/nzDMnFP/logo.png" alt="Logo" th:style="${'width:100px;'}">
+            <a href="/"><img class="d-block" src="https://i.ibb.co/nzDMnFP/logo.png" alt="Logo" th:style="${'width:100px;'}"></a>
             <a class="navbar-brand" href="/" th:style="${'color:#5E0080; font-weight:800; font-size:18px; line-height:60px; margin-right:100px;'}">개발상점</a>
             <form class="form-inline my-2 my-lg-0" th:action="@{/}" method="get">
                 <input name="searchQuery" class="form-control mr-sm-2" type="search" placeholder="검색어를 입력해주세요"
