@@ -23,7 +23,7 @@
     </style>
 </th:block>
 
-<div layout:fragment="content" th:style="${'margin-top:0px; max-width:840px; display:flex; flex-direction:column; margin:0 auto;'}" >
+<div layout:fragment="content" th:style="${'margin-top:0px; max-width:740px; display:flex; flex-direction:column; margin:0 auto;'}" >
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -65,7 +65,7 @@
                 <div class="card">
                     <a th:href="'/item/' +${item.id}" class="text-dark">
                         <div th:style="${'text-align:center'}">
-                            <img th:src="${item.imgUrl}" class="card-img-top" th:alt="${item.itemNm}" th:style="${'max-width:270px; height:270px;'}">
+                            <img th:src="${item.imgUrl}" class="card-img-top" th:alt="${item.itemNm}" th:style="${'max-width:230px; height:230px;'}">
                         </div>
 
                         <div class="card-body">

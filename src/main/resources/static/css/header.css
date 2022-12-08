@@ -1,0 +1,114 @@
+.bigBox{
+    width: 100%;
+    height: 22vh;
+    border-bottom: 1px solid darkgrey;
+    margin-bottom: 5vh;
+}
+.header_inner{
+    width: 840px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+.header_line00{
+    width: 100%;
+    height: 3vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.header_member_link{
+    font-size: 14px;
+    color: #000;
+    font-weight: bold;
+}
+.header_member_link:hover{
+    color: #000;
+}
+.header_member_link:visited{
+    color: #000;
+}
+.header_line01{
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 2vh;
+}
+.header_line01 > .header_section01{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    line-height: 10vh;
+}
+
+.header_line01 > .header_section01 > .header_logo{
+    background-image: url("https://i.ibb.co/nzDMnFP/logo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100px;
+    height: 50px;
+    font-size: 40px;
+    color: transparent;
+}
+.header_logo_link1{
+    color: transparent;
+}
+.header_logo_link1:visited{
+    color: transparent;
+}
+.header_logo_link1:hover{
+    color: transparent;
+}
+.header_logo_link2{
+    color: #5E0080;
+}
+.header_logo_link2:visited{
+    color: #5E0080;
+}
+.header_line01 > .header_section01 > p{
+    font-size: 18px;
+    font-weight: bold;
+    color: #5E0080;
+    margin-left: 20px;
+}
+.header_line01 > .header_section02{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    line-height: 10vh;
+}
+.header_search{
+    width: 300px;
+    height: 48px;
+    border-radius: 6px;
+    border: 1px solid #5E0080;
+    box-sizing: border-box;
+    padding-left: 20px;
+}
+.header_search_btn:hover{
+    background-color: #5E0080;
+    color: #fff;
+}
+.header_search_btn{
+    width: 60px;
+    height: 48px;
+    border-radius: 5px;
+    border: 1px solid #5E0080;
+    line-height: 0;
+    background-color: #fff;
+}
+.header_line02{
+    width: 100%;
+    height: 16vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+.header_link{
+    color: #000;
+}
