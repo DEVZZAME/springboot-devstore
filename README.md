@@ -1,43 +1,38 @@
-# zzameshop
+# 이커머스 쇼핑몰(Dev Store)
 
-이커머스를 활용하여 제작된 글로세리 쇼핑몰
-로그인, 회원가입, 상품등록, 상품관리, 상품주문, 주문취소, 장바구니, 검색, 페이징 기능 포함
+## 프로젝트 개요
 
+| Front-end | HTML5, CSS3, Javascript, Thymeleaf |
+| --- | --- |
+| Back-end | Spring Boot, Spring Data JPA, Spring Security, JUnit5 |
+| Database | MySQL |
+| Deployment | AWS EC2, AWS RDS |
+| 개발 기간 | 2022.01.11 ~ 2022.03.02 (약 7주) |
+| 참여 인원 | 1인 개발 |
+| 담당 구현 파트 | - 프로젝트 개발환경 구축, 설계 참여
+- 로그인, 회원가입, 소셜 로그인 구현
+- 해더(홈, 태그 및 계정 검색, 돋보기, 마이페이지)
+- 메인 피드 페이지(구독 대상 게시물 노출, 페이징)
+- 마이 페이지(프로필 및 내정보 변경, 게시물 업로드, 로그아웃, 구독 관리)
+- 돋보기 페이지(Likes 기준 노출, 상대 페이지 링크)
+- GitHub 레포지토리 전체 관리 |
 
-# Description
+## 프로젝트 소개
 
-- 개발 기간: 2022.03.20 ~ 2022.05.10 (약 8주)
+- 길지 않은 시간동안 쿠팡, 아마존과 같은 이커머스 플랫폼들은 급속도로 성장해왔습니다. 이에 따라 우리의 실생활에서 상당히 긍정적인 영향을 주고 있으며, 이커머스 플랫폼들이 갑자기 사라진다면 굉장히 불편할 것이라고 예상합니다. 하나의 이커머스 서비스가 생기기 위해서 어떤 기능들이 포함되어야 할까 고민하다 직접 이를 구현해 본 프로젝트입니다.
 
-- 참여 인원: 1인 개발
+## 개발 중 이슈와 해결
 
-- 사용 기술
-
-  - Spring Boot 2.5.2, Querydsl-JPA 4.3.1, OAuth2.0, Maven 1.1.3
-  - Java 11,  Ajax,  Jquery,  Git,  MVC Pttern
-  - MySQL, Modelmapper 2.3.9, Thymeleaf 2.5.1
-  - HTML5, CSS3, Javascript, 
-
-- 담당 구현 파트
-
-  - 프로젝트 개발환경 구축, 설계 참여
-
-  - 메인 페이지 구현
-
-  - Header 메인 메뉴 디자인 및 구성(검색)
-  
-  - 상품 등록 페이지 구현(상품 상태, 상품 설명, 상품 이미지 업로드)
-  
-  - 상품 관리 페이지 구현(상품 리스트, 페이징, 검색)
-
-  - 상품 상세 페이지 구현 (수량에 따른 가격증가, 좋아요, 장바구니, 주문하기)
-  
-  - 상품 구매이력 페이지 구현(주문일시, 페이징, 주문취소)
-
-  - GitHub 레포지토리 전체 관리
-
+| 문제점 | 해결책 |
+| --- | --- |
+| Servlet과 JSP를 사용했을 때, View에서 Java 코드를 직접 사용해 비즈니스 로직을 구현하니 코드도 복잡해지고 다소 무거워지는 문제점이 생겼었음. | Spring 에서 공식적으로 지원하는 Thymeleaf 를 사용하기로 함. 물론 Servlet를 제외시키고 JSP만 사용하는 Model1 방식이 있긴 했지만, Thymeleaf는 기본적으로 HTML 코드로 작성되어 브라우저가 불필요하거나 인식하지 못하는 부분을 건너뛰고 읽기 때문에 개발하면서 굉장히 편리했음. |
+| Java 는 OOP에 맞춰 프로그래밍을 해야 한다고 알고 있었지만, 인터페이스와 상속을 제외하고는 정확히 어떻게 객체지향적으로 프로그래밍을 할 지 고민이 많았음. | Java 프로그래밍을 하면서 관계형 데이터베이스를 사용하면, 테이블에는 상속이 없기 때문에 OOP가 지켜지지 않는 문제점이 있었는데, JPA를 사용하면서 해당 문제점이 해결 되었음. 더불어 반복적인 CRUD 쿼리를 작성하지 않아도 되니 생산성이 향상되는 결과까지 가져옴. |
 
 # Spring Boot(API Server)
+
 ### JSP(MAP)에서 Data Request → JSON으로 Response
+
+> 
 > 
 - config : project configurations 관리
 - domain : DB에서 Table과 Mapping
@@ -48,20 +43,24 @@
     - dto : 일반적인 request/response dto와 공통응답을 위한 dto를 관리
     - api : data를 응답할 controller를 관리
 
-
 # JPA+QLRM(ORM)
+
 ### 반복적인 CRUD 작성과 쿼리 작성을 자동화
+
+> 
 > 
 - JPA : 반복적인 CRUD 작업을 대체해 간단히 DB에서 데이터를 조회
 - QLRM : JPA Native Query 결과값을 Entity가 아닌 특정 DTO로 매핑
 
-# OAuth2.0(Login)
-### HTTP Session을 통한 소셜 로그인
-> 
-- oauth2Login() : ouath2 로그인이 가능하도록 처리
-- userInfoEndPoint() : 인증에 성공하면 oAuth2DetailsService에서 해당 USER 정보에 대해서 후처리
+### 의존성
 
-    
+- Sring Boot DevTools
+- Lombok
+- Spring Data JPA
+- MariaDB Driver
+- Spring Security
+- Spring Web
+- oauth2-client
 
 # Views
 
@@ -92,10 +91,3 @@
 - **장바구니 및 로그아웃**
 
 <p align="center"><img src="https://github.com/DEVZZAME/zzameshop/blob/master/04.gif?raw=true"/></p>
-
-
-
-
-
-
-
